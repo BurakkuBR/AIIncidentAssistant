@@ -4,6 +4,37 @@ An ASP.NET Core web application designed to assist with technical incident inves
 
 The project demonstrates backend development with C#, integration patterns for AI services, multilingual user interfaces, automated testing, and modern web application design.
 
+
+## Screenshots
+
+The application provides a responsive dashboard with Dark and Light themes.
+
+### Dark Mode
+
+**Incident submission**
+
+![Dark Mode - Incident Dashboard](docs/screenshots/dark-dashboard.png)
+
+**Investigation results**
+
+![Dark Mode - Investigation Results](docs/screenshots/dark-results.png)
+
+### Light Mode
+
+**Incident submission**
+
+![Light Mode - Incident Dashboard](docs/screenshots/light-dashboard.png)
+
+**Investigation results**
+
+![Light Mode - Investigation Results](docs/screenshots/light-results.png)
+
+> All screenshots demonstrate the application's rule-based Demo Mode.
+> No external AI service was used to generate these results.
+
+---
+
+
 ## Features
 
 - **Incident investigation:** Submit application details, environment information, error messages, technical logs, and recent changes.
