@@ -1,5 +1,7 @@
 # AI Incident Assistant
 
+**GitHub Repository:** [AI Incident Assistant](https://github.com/BurakkuBR/AIIncidentAssistant)
+
 An ASP.NET Core web application designed to assist with technical incident investigation by organizing incident details and generating structured troubleshooting recommendations.
 
 The project demonstrates backend development with C#, integration patterns for AI services, multilingual user interfaces, automated testing, and modern web application design.
@@ -125,7 +127,7 @@ AIIncidentAssistant/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/AIIncidentAssistant.git
+   git clone https://github.com/BurakkuBR/AIIncidentAssistant
    ```
 
 2. Open the solution in Visual Studio.
