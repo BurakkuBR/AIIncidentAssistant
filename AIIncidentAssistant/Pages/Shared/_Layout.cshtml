@@ -1,0 +1,208 @@
+﻿@using System.Globalization
+@using AIIncidentAssistant.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> T
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - AI Incident Assistant</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/css/incident-assistant.css"
+          asp-append-version="true" />
+
+    <script src="~/js/theme.js"
+            asp-append-version="true"></script>
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="app-sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">AI</div>
+
+                <div>
+                    <div class="brand-title">AI Incident</div>
+                    <div class="brand-subtitle">Assistant Platform</div>
+                </div>
+            </div>
+
+            <div class="sidebar-section-title">
+                @T["Workspace"]
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a asp-page="/Index" class="sidebar-link active">
+                    <span class="sidebar-link-icon">▦</span>
+                    @T["Dashboard"]
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-footer-title">
+                    AI Incident Assistant
+                </div>
+
+                <small>
+                    Technical troubleshooting platform
+                </small>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <div class="app-main">
+
+            <header class="app-topbar">
+
+                <div>
+                    <div class="topbar-title">@T["Dashboard"]</div>
+                    <div class="topbar-subtitle">@T["WorkspaceSubtitle"]</div>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button type="button"
+                            id="themeToggle"
+                            class="theme-switch"
+                            role="switch"
+                            aria-label="Light Mode"
+                            aria-checked="false">
+
+                        <span class="theme-switch-track" aria-hidden="true">
+                            <span class="theme-switch-thumb">
+                                <span id="themeIcon">☾</span>
+                            </span>
+                        </span>
+
+                        <span id="themeLabel" class="theme-switch-label">
+                            Dark Mode
+                        </span>
+
+                    </button>
+
+
+                    <form asp-controller="Language"
+                          asp-action="SetLanguage"
+                          method="post"
+                          class="language-form"
+                          id="languageForm">
+
+                        <input type="hidden"
+                               name="returnUrl"
+                               value="@(Context.Request.Path + Context.Request.QueryString)" />
+
+                        <input type="hidden"
+                               name="culture"
+                               id="selectedCulture"
+                               value="@CultureInfo.CurrentUICulture.Name" />
+
+                        @{
+                            var currentCulture = CultureInfo.CurrentUICulture.Name;
+
+                            var currentLanguage = currentCulture switch
+                            {
+                                "pt-BR" => "🇧🇷 Português",
+                                "es-ES" => "🇪🇸 Español",
+                                _ => "🇺🇸 English"
+                            };
+                        }
+
+                        <div class="language-dropdown" id="languageDropdown">
+
+                            <button type="button"
+                                    class="language-trigger"
+                                    id="languageTrigger"
+                                    aria-label="@T["Language"]"
+                                    aria-expanded="false"
+                                    aria-controls="languageMenu">
+
+                                <span class="language-trigger-text">
+                                    @currentLanguage
+                                </span>
+
+                                <span class="language-chevron" aria-hidden="true">
+                                    ▾
+                                </span>
+                            </button>
+
+                            <div class="language-menu"
+                                 id="languageMenu"
+                                 aria-label="@T["Language"]"
+                                 inert>
+
+                                <button type="button"
+                                        class="language-option"
+                                        data-culture="en-US"
+                                        aria-pressed="false">
+                                    <span>🇺🇸 English</span>
+                                    <span class="language-check" aria-hidden="true">✓</span>
+                                </button>
+
+                                <button type="button"
+                                        class="language-option"
+                                        data-culture="pt-BR"
+                                        aria-pressed="false">
+                                    <span>🇧🇷 Português</span>
+                                    <span class="language-check" aria-hidden="true">✓</span>
+                                </button>
+
+                                <button type="button"
+                                        class="language-option"
+                                        data-culture="es-ES"
+                                        aria-pressed="false">
+                                    <span>🇪🇸 Español</span>
+                                    <span class="language-check" aria-hidden="true">✓</span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
+
+
+                    <span class="topbar-status">
+                        ● @T["SystemReady"]
+                    </span>
+
+                </div>
+
+            </header>
+
+            <main class="app-content">
+                @RenderBody()
+            </main>
+
+            <footer class="app-footer">
+                AI Incident Assistant · Technical Investigation Platform
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/language-dropdown.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37411.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIIncidentAssistant", "AIIncidentAssistant\AIIncidentAssistant.csproj", "{0E292FEF-A04D-4AE3-84FF-711A9481324B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIIncidentAssistant.Tests", "AIIncidentAssistant.Tests\AIIncidentAssistant.Tests.csproj", "{AB9D9B6A-E2D5-4F2B-B3C8-2D347A24ABA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E292FEF-A04D-4AE3-84FF-711A9481324B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E292FEF-A04D-4AE3-84FF-711A9481324B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E292FEF-A04D-4AE3-84FF-711A9481324B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E292FEF-A04D-4AE3-84FF-711A9481324B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB9D9B6A-E2D5-4F2B-B3C8-2D347A24ABA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB9D9B6A-E2D5-4F2B-B3C8-2D347A24ABA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB9D9B6A-E2D5-4F2B-B3C8-2D347A24ABA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB9D9B6A-E2D5-4F2B-B3C8-2D347A24ABA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99280841-D0B4-46C3-BA6F-32B7F6B9FB9B}
+	EndGlobalSection
+EndGlobal

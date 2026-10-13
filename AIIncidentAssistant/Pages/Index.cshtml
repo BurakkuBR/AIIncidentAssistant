@@ -1,0 +1,386 @@
+﻿@page
+@model AIIncidentAssistant.Pages.IndexModel
+@using AIIncidentAssistant.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> T
+
+@{
+    ViewData["Title"] = "Incident Dashboard";
+
+    var severity = Model.Analysis?.Severity ?? "";
+
+    var severityClass = severity.ToLowerInvariant() switch
+    {
+        "critical" => "severity-critical",
+        "high" => "severity-high",
+        "medium" => "severity-medium",
+        "low" => "severity-low",
+        _ => "severity-neutral"
+    };
+
+    var severityText = severity.ToLowerInvariant() switch
+    {
+        "critical" => T["SeverityCritical"].Value,
+        "high" => T["SeverityHigh"].Value,
+        "medium" => T["SeverityMedium"].Value,
+        "low" => T["SeverityLow"].Value,
+        "not analyzed" => T["SeverityNotAnalyzed"].Value,
+        _ => severity
+    };
+
+    var isAnalyzed = Model.Analysis != null &&
+        !severity.Equals("Not analyzed", StringComparison.OrdinalIgnoreCase);
+}
+
+<div class="incident-dashboard">
+
+
+    <div class="dashboard-heading">
+        <div>
+            <div class="dashboard-eyebrow">
+                @T["IncidentInvestigation"]
+            </div>
+
+            <h1>@T["IncidentAnalysis"]</h1>
+
+            <p>@T["IncidentDescription"]</p>
+        </div>
+
+        @if (Model.IsDemoMode)
+        {
+            <span class="workspace-badge demo-badge">
+                ● @T["DemoMode"]
+            </span>
+        }
+        else
+        {
+            <span class="workspace-badge">
+                ● @T["ClaudeAI"]
+            </span>
+        }
+    </div>
+
+    <div class="overview-grid">
+
+        <div class="overview-card">
+            <div class="overview-label">
+                @T["AnalysisMode"]
+            </div>
+
+            <div class="overview-value">
+                @(Model.IsDemoMode
+                                ? T["DemoMode"]
+                                : T["ClaudeAI"])
+            </div>
+
+            <div class="overview-description">
+                @(Model.IsDemoMode
+                                ? T["SimulatedAnalysis"]
+                                : T["AIInvestigation"])
+            </div>
+        </div>
+
+        <div class="overview-card">
+            <div class="overview-label">
+                @T["Integration"]
+            </div>
+
+            <div class="overview-value">
+                @(Model.IsDemoMode
+                                ? T["LocalMock"]
+                                : "Claude API")
+            </div>
+
+            <div class="overview-description">
+                @(Model.IsDemoMode
+                                ? T["NoExternalCalls"]
+                                : T["ExternalService"])
+            </div>
+        </div>
+
+        <div class="overview-card">
+            <div class="overview-label">
+                @T["Investigation"]
+            </div>
+
+            <div class="overview-value">
+                @(Model.Analysis == null
+                                ? T["Ready"]
+                                : isAnalyzed
+                                ? T["Completed"]
+                                : T["NotAnalyzed"])
+            </div>
+
+            <div class="overview-description">
+                @(Model.Analysis == null
+                                ? T["WaitingDetails"]
+                                : isAnalyzed
+                                ? T["ReviewFindings"]
+                                : T["AIUnavailable"])
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Incident Form -->
+    <section class="workspace-panel">
+
+        <div class="workspace-panel-header">
+            <div>
+                <h2>@T["NewIncident"]</h2>
+                <p>@T["ProvideDetails"]</p>
+            </div>
+
+            <span class="panel-step">@T["InputStep"]</span>
+        </div>
+
+        <div class="workspace-panel-body">
+
+            <form method="post" id="incidentForm">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3"></div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <label asp-for="Incident.Application" class="form-label">
+                            @T["Application"]
+                            <span class="required-marker">*</span>
+                        </label>
+
+                        <input asp-for="Incident.Application"
+                               class="form-control"
+                               placeholder="@T["ApplicationPlaceholder"]" />
+
+                        <span asp-validation-for="Incident.Application"
+                              class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Incident.Environment" class="form-label">
+                            @T["Environment"]
+                            <span class="required-marker">*</span>
+                        </label>
+
+                        <input asp-for="Incident.Environment"
+                               class="form-control"
+                               placeholder="@T["EnvironmentPlaceholder"]" />
+
+                        <span asp-validation-for="Incident.Environment"
+                              class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <label asp-for="Incident.ErrorMessage" class="form-label">
+                            @T["ErrorMessage"]
+                            <span class="required-marker">*</span>
+                        </label>
+
+                        <textarea asp-for="Incident.ErrorMessage"
+                            class="form-control"
+                            rows="3"
+                            placeholder="@T["ErrorPlaceholder"]"></textarea>
+
+                        <span asp-validation-for="Incident.ErrorMessage"
+                              class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="field-heading">
+                            <label asp-for="Incident.Logs" class="form-label">
+                                @T["TechnicalLogs"]
+                            </label>
+
+                            <span class="optional-label">@T["Optional"]</span>
+
+                        </div>
+
+                        <textarea asp-for="Incident.Logs"
+                                  class="form-control font-monospace"
+                                  rows="5"
+                                  placeholder="@T["LogsPlaceholder"]"></textarea>
+
+                        <span asp-validation-for="Incident.Logs"
+                              class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="field-heading">
+                            <label asp-for="Incident.RecentChanges" class="form-label">
+                                @T["RecentChanges"]
+                            </label>
+
+                            <span class="optional-label">@T["Optional"]</span>
+                        </div>
+
+                        <textarea asp-for="Incident.RecentChanges"
+                                  class="form-control"
+                                  rows="3"
+                                  placeholder="@T["ChangesPlaceholder"]"></textarea>
+
+                        <span asp-validation-for="Incident.RecentChanges"
+                              class="text-danger small"></span>
+                    </div>
+
+                </div>
+
+                <div class="privacy-notice">
+                    <strong>@T["DataPrivacy"]</strong>
+                    <p>@T["PrivacyNotice"]</p>
+                </div>
+
+                <div class="workspace-actions">
+
+                    <button type="submit"
+                            id="analyzeButton"
+                            class="btn btn-primary analyze-btn">
+
+                        <span id="buttonText">
+                            @T["AnalyzeIncident"] →
+                        </span>
+
+                        <span id="loadingIndicator" class="d-none">
+                            <span class="spinner-border spinner-border-sm me-2"
+                                  role="status"
+                                  aria-hidden="true"></span>
+
+                            @T["Analyzing"]
+                        </span>
+                    </button>
+
+                    <a asp-page="/Index"
+                       class="btn btn-outline-secondary clear-btn">
+                        @T["ClearForm"]
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+
+    <!-- Analysis Results -->
+    @if (Model.Analysis != null)
+    {
+        <section class="workspace-panel results-panel">
+
+            <div class="workspace-panel-header">
+                <div>
+                    <h2>@T["InvestigationResults"]</h2>
+                    <p>@T["ReviewResults"]</p>
+                </div>
+
+                <span class="panel-step">
+                    @T["ResultsStep"]
+                </span>
+            </div>
+
+            <div class="workspace-panel-body">
+
+                <div class="results-summary">
+
+                    <div>
+                        <div class="result-label">
+                            @T["IncidentSummary"]
+                        </div>
+
+                        <h3>@Model.Analysis.Summary</h3>
+                    </div>
+
+                    <span class="severity-badge @severityClass">
+                        @severityText
+                    </span>
+
+                </div>
+
+                <div class="results-grid">
+
+                    <!-- Possible Causes -->
+                    <div class="result-section">
+                        <h4>@T["PossibleCauses"]</h4>
+
+                        @if (Model.Analysis.PossibleCauses?.Any() == true)
+                        {
+                            @foreach (var cause in Model.Analysis.PossibleCauses)
+                            {
+                                <div class="cause-card">
+                                    <strong>@cause.Cause</strong>
+                                    <p>@cause.Reason</p>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p class="result-empty">
+                                @T["NoCauses"]
+                            </p>
+                        }
+                    </div>
+
+                    <!-- Recommended Actions -->
+                    <div class="result-section">
+                        <h4>@T["RecommendedActions"]</h4>
+
+                        @if (Model.Analysis.RecommendedActions?.Any() == true)
+                        {
+                            <ol class="recommendation-list">
+                                @foreach (var action in Model.Analysis.RecommendedActions)
+                                {
+                                    <li>@action</li>
+                                }
+                            </ol>
+                        }
+                        else
+                        {
+                            <p class="result-empty">
+                                @T["NoActions"]
+                            </p>
+                        }
+                    </div>
+
+                </div>
+
+                <!-- Missing Information -->
+                <div class="result-section missing-section">
+                    <h4>@T["MissingInformation"]</h4>
+
+                    @if (Model.Analysis.MissingInformation?.Any() == true)
+                    {
+                        <ul class="missing-list">
+                            @foreach (var information in Model.Analysis.MissingInformation)
+                            {
+                                <li>@information</li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p class="result-empty">
+                            @T["NoMissingInformation"]
+                        </p>
+                    }
+                </div>
+
+                <div class="analysis-disclaimer">
+                    <strong>@T["InvestigationNotice"]</strong>
+
+                    <p>@T["InvestigationDisclaimer"]</p>
+                </div>
+
+            </div>
+        </section>
+    }
+
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script src="~/js/incident-assistant.js"
+            asp-append-version="true"></script>
+}

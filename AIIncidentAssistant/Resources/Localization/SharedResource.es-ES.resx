@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Panel de control</value>
+  </data>
+  <data name="SystemReady" xml:space="preserve">
+    <value>Sistema listo</value>
+  </data>
+  <data name="Workspace" xml:space="preserve">
+    <value>ESPACIO DE TRABAJO</value>
+  </data>
+  <data name="WorkspaceSubtitle" xml:space="preserve">
+    <value>Espacio de investigación de incidentes</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="IncidentInvestigation" xml:space="preserve">
+    <value>INVESTIGACIÓN DE INCIDENTES</value>
+  </data>
+  <data name="IncidentAnalysis" xml:space="preserve">
+    <value>Análisis de Incidentes</value>
+  </data>
+  <data name="IncidentDescription" xml:space="preserve">
+    <value>Investigue incidentes técnicos y reciba recomendaciones estructuradas para solucionar problemas.</value>
+  </data>
+  <data name="AnalysisMode" xml:space="preserve">
+    <value>MODO DE ANÁLISIS</value>
+  </data>
+  <data name="DemoMode" xml:space="preserve">
+    <value>Modo Demostración</value>
+  </data>
+  <data name="ClaudeAI" xml:space="preserve">
+    <value>Claude AI</value>
+  </data>
+  <data name="SimulatedAnalysis" xml:space="preserve">
+    <value>Análisis simulado basado en reglas</value>
+  </data>
+  <data name="AIInvestigation" xml:space="preserve">
+    <value>Investigación de incidentes con IA</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>INTEGRACIÓN</value>
+  </data>
+  <data name="LocalMock" xml:space="preserve">
+    <value>Simulación Local</value>
+  </data>
+  <data name="NoExternalCalls" xml:space="preserve">
+    <value>Sin llamadas a API externas</value>
+  </data>
+  <data name="ExternalService" xml:space="preserve">
+    <value>Servicio externo de IA seleccionado</value>
+  </data>
+  <data name="Investigation" xml:space="preserve">
+    <value>INVESTIGACIÓN</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Listo</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Completado</value>
+  </data>
+  <data name="NotAnalyzed" xml:space="preserve">
+    <value>No analizado</value>
+  </data>
+  <data name="WaitingDetails" xml:space="preserve">
+    <value>Esperando información del incidente</value>
+  </data>
+  <data name="ReviewFindings" xml:space="preserve">
+    <value>Revise los resultados a continuación</value>
+  </data>
+  <data name="AIUnavailable" xml:space="preserve">
+    <value>El análisis con IA no está disponible</value>
+  </data>
+  <data name="NewIncident" xml:space="preserve">
+    <value>Nuevo Incidente</value>
+  </data>
+  <data name="ProvideDetails" xml:space="preserve">
+    <value>Proporcione los detalles técnicos para la investigación.</value>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>Aplicación</value>
+  </data>
+  <data name="Environment" xml:space="preserve">
+    <value>Entorno</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>Mensaje de Error</value>
+  </data>
+  <data name="TechnicalLogs" xml:space="preserve">
+    <value>Registros Técnicos</value>
+  </data>
+  <data name="RecentChanges" xml:space="preserve">
+    <value>Cambios Recientes</value>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>OPCIONAL</value>
+  </data>
+  <data name="ApplicationPlaceholder" xml:space="preserve">
+    <value>Ej.: Portal del Cliente</value>
+  </data>
+  <data name="EnvironmentPlaceholder" xml:space="preserve">
+    <value>Ej.: Producción</value>
+  </data>
+  <data name="ErrorPlaceholder" xml:space="preserve">
+    <value>Describa el error o comportamiento inesperado...</value>
+  </data>
+  <data name="LogsPlaceholder" xml:space="preserve">
+    <value>Pegue registros o trazas de error relevantes...</value>
+  </data>
+  <data name="ChangesPlaceholder" xml:space="preserve">
+    <value>Despliegues, actualizaciones o cambios de configuración...</value>
+  </data>
+  <data name="DataPrivacy" xml:space="preserve">
+    <value>Privacidad de los Datos</value>
+  </data>
+  <data name="PrivacyNotice" xml:space="preserve">
+    <value>Elimine contraseñas, claves de API, datos personales e información confidencial antes de enviar registros.</value>
+  </data>
+  <data name="AnalyzeIncident" xml:space="preserve">
+    <value>Analizar Incidente</value>
+  </data>
+  <data name="Analyzing" xml:space="preserve">
+    <value>Analizando...</value>
+  </data>
+  <data name="ClearForm" xml:space="preserve">
+    <value>Limpiar Formulario</value>
+  </data>
+  <data name="InvestigationResults" xml:space="preserve">
+    <value>Resultados de la Investigación</value>
+  </data>
+  <data name="ReviewResults" xml:space="preserve">
+    <value>Revise los hallazgos y los próximos pasos sugeridos.</value>
+  </data>
+  <data name="ResultsStep" xml:space="preserve">
+    <value>02 / RESULTADOS</value>
+  </data>
+  <data name="InputStep" xml:space="preserve">
+    <value>01 / ENTRADA</value>
+  </data>
+  <data name="IncidentSummary" xml:space="preserve">
+    <value>RESUMEN DEL INCIDENTE</value>
+  </data>
+  <data name="PossibleCauses" xml:space="preserve">
+    <value>Posibles Causas</value>
+  </data>
+  <data name="RecommendedActions" xml:space="preserve">
+    <value>Acciones Recomendadas</value>
+  </data>
+  <data name="MissingInformation" xml:space="preserve">
+    <value>Información Faltante</value>
+  </data>
+  <data name="NoCauses" xml:space="preserve">
+    <value>No hay posibles causas disponibles.</value>
+  </data>
+  <data name="NoActions" xml:space="preserve">
+    <value>No hay acciones recomendadas disponibles.</value>
+  </data>
+  <data name="NoMissingInformation" xml:space="preserve">
+    <value>No se solicita información adicional.</value>
+  </data>
+  <data name="InvestigationNotice" xml:space="preserve">
+    <value>Aviso de Investigación</value>
+  </data>
+  <data name="InvestigationDisclaimer" xml:space="preserve">
+    <value>Las recomendaciones son sugerencias de investigación, no diagnósticos confirmados. Valide los resultados antes de realizar cambios en sistemas de producción.</value>
+  </data>
+  <data name="SeverityCritical" xml:space="preserve">
+    <value>Crítica</value>
+  </data>
+  <data name="SeverityHigh" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="SeverityMedium" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="SeverityLow" xml:space="preserve">
+    <value>Baja</value>
+  </data>
+  <data name="SeverityNotAnalyzed" xml:space="preserve">
+    <value>No analizado</value>
+  </data>
+  <data name="DemoSummary" xml:space="preserve">
+    <value>[MODO DEMO — ANÁLISIS SIMULADO] La aplicación {0} presentó un incidente en el entorno {1}. Error informado: {2}</value>
+  </data>
+  <data name="DatabaseCause" xml:space="preserve">
+    <value>Posible problema de conectividad con la base de datos</value>
+  </data>
+  <data name="DatabaseReason" xml:space="preserve">
+    <value>El incidente contiene términos relacionados con la base de datos o la conexión.</value>
+  </data>
+  <data name="CheckDatabase" xml:space="preserve">
+    <value>Verifique la disponibilidad del servidor de base de datos.</value>
+  </data>
+  <data name="CheckConnection" xml:space="preserve">
+    <value>Verifique las cadenas de conexión y la conectividad de la red.</value>
+  </data>
+  <data name="DatabaseMissing" xml:space="preserve">
+    <value>Registros del servidor de base de datos y métricas de conexión.</value>
+  </data>
+  <data name="TimeoutCause" xml:space="preserve">
+    <value>Posible tiempo de espera agotado en la solicitud</value>
+  </data>
+  <data name="TimeoutReason" xml:space="preserve">
+    <value>La descripción del incidente contiene un término relacionado con el tiempo de espera.</value>
+  </data>
+  <data name="CheckResponseTime" xml:space="preserve">
+    <value>Revise los tiempos de respuesta de la aplicación.</value>
+  </data>
+  <data name="CheckDependencies" xml:space="preserve">
+    <value>Verifique los servicios dependientes y la latencia de la red.</value>
+  </data>
+  <data name="TimeoutMissing" xml:space="preserve">
+    <value>Duración de la solicitud y métricas de las dependencias.</value>
+  </data>
+  <data name="UnknownCause" xml:space="preserve">
+    <value>Problema de aplicación no determinado</value>
+  </data>
+  <data name="UnknownReason" xml:space="preserve">
+    <value>Información insuficiente para identificar un patrón técnico específico.</value>
+  </data>
+  <data name="CheckLogs" xml:space="preserve">
+    <value>Revise los registros de la aplicación y los cambios recientes.</value>
+  </data>
+  <data name="UnknownMissing" xml:space="preserve">
+    <value>Registros detallados del error y pasos para reproducir el problema.</value>
+  </data>
+  <data name="ApplicationRequired" xml:space="preserve">
+    <value>El nombre de la aplicación es obligatorio.</value>
+  </data>
+  <data name="EnvironmentRequired" xml:space="preserve">
+    <value>El entorno es obligatorio.</value>
+  </data>
+  <data name="ErrorMessageRequired" xml:space="preserve">
+    <value>El mensaje de error es obligatorio.</value>
+  </data>
+  <data name="ApplicationTooLong" xml:space="preserve">
+    <value>O nome da aplicação deve ter no máximo 100 caracteres.</value>
+  </data>
+  <data name="EnvironmentTooLong" xml:space="preserve">
+    <value>El entorno debe tener como máximo 50 caracteres.</value>
+  </data>
+  <data name="ErrorMessageTooLong" xml:space="preserve">
+    <value>El mensaje de error debe tener como máximo 2000 caracteres.</value>
+  </data>
+  <data name="LogsTooLong" xml:space="preserve">
+    <value>Los registros deben tener como máximo 10000 caracteres.</value>
+  </data>
+  <data name="RecentChangesTooLong" xml:space="preserve">
+    <value>Los cambios recientes deben tener como máximo 2000 caracteres.</value>
+  </data>
+</root>
